@@ -3,9 +3,16 @@ import Header from "./components/Header";
 import List  from "./pages/List";
 import Map from  "./pages/Map";
 import Buttons from "./components/Buttons";
-
+import {useEffect} from "react";
+import {useDispatch} from "react-redux";
+import {getFlights} from "./redux/actions";
 
 const App = () => {
+  const dispatch= useDispatch();
+ //tr sınırları içindeki uçuşları alıcaz ve store a aktarıcaz
+  useEffect(()=> {
+    dispatch(getFlights());
+  },[]);
 return ( 
   <BrowserRouter>
     <Header/>

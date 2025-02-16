@@ -1,4 +1,5 @@
-import { MapContainer, TileLayer,Popup,Marker} from 'react-leaflet'
+import { MapContainer, TileLayer,Popup, Marker} from 'react-leaflet';
+import "leaflet/dist/leaflet.css";
 
 const Map = () => {
   return (
