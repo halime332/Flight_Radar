@@ -1,7 +1,10 @@
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 
 const Header = () => {
+  const {isLoading,error,flights} = useSelector((store) =>store.flight);
+
   return (
   <header>
     <Link to="/">
@@ -9,7 +12,7 @@ const Header = () => {
       <h2>Uçuş Radarı</h2>
     </Link>
 
-    <h3>275 Uçuş Bulundu </h3>
+    <h3>{isLoading ? "Uçuş aranıyor..." :error ? "Hata:"+ error :`${flights.length} Uçuş Bulundu`}</h3>
   </header>
     
   );

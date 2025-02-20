@@ -18,7 +18,24 @@ export const getFlights = createAsyncThunk("flight/getFlights",
          //api isteğini at      
           const res = await 
           api.get("/flights/list-in-boundary",{params});
-          console.log(res.aircraft);
+          //apiden gelen dizi içerisindeki dizileri proje içerisinde kullanımının 
+          //kolay olması için nesneye çevir
+          const formatted = res.data.aircraft.map((item) =>({
+                id:item[0],
+                code:item[1],
+                lat:item[2],
+                lng:item[3]
+          }));
+          return formatted;
     }
 );
     
+
+
+
+export const getInfo = createAsyncThunk("info/getInfo",async (id) =>{
+    //api'den uçuş detaylarını al
+    const res= await api.get(`/flights/detail?flight=${id}`); 
+     //aksiyonun payload'ını return et
+     return res.data;
+});
