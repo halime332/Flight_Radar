@@ -11,3 +11,5 @@
 ## API
 
 -https://rapidapi.com/apidojo/api/flight-radar1
+
+<img src="screen.gif"/>

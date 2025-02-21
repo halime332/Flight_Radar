@@ -44,7 +44,7 @@ if(error) return
   </div>;
 
   return (
-    <div className="p-3 p-md-4">
+    <div className="matt">
       <table className="table table-dark table-striped table-hover table-responsive mt-5">
         <thead>
           <tr>
@@ -63,7 +63,7 @@ if(error) return
             <td>{flight.lat}</td>
             <td>{flight.lng}</td>
             <td>
-              <button onClick={()=>setDetailId(flight.id)} className="button">Detay</button>
+              <button onClick={()=>setDetailId(flight.id)} className="button bg-gray-800">Detay</button>
             </td>
            </tr>
          ))}
